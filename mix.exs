@@ -19,7 +19,7 @@ defmodule SpotifyExTest.Mixfile do
   def application do
     [mod: {SpotifyExTest, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex, :spotify_ex]]
+                    :phoenix_ecto, :postgrex, :spotify_ex, :poison]]
   end
 
   # Specifies which paths to compile per environment.
@@ -35,7 +35,9 @@ defmodule SpotifyExTest.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
+     {:poison, "~> 1.5"},
      {:spotify_ex, path: "~/code/spotify_ex"},
+
      {:cowboy, "~> 1.0"}]
   end
 
