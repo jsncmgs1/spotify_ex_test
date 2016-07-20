@@ -6,13 +6,13 @@ defmodule SpotifyExTest.PlaylistController do
     case Spotify.Playlist.current_user_playlists(conn) do
       { 200, playlists } ->
         render conn, "index.html", playlists: playlists
-        :authorize -> redirect conn, external: Spotify.Authorization.call
+        :authorize -> redirect conn, external: Spotify.Authorization.url
     end
   end
 
   defp check_tokens(conn, _params) do
     unless Spotify.Authentication.tokens_present?(conn) do
-      redirect conn, external: Spotify.Authorization.call
+      redirect conn, to: authorization_path(conn, :authorize)
     end
     conn
   end
