@@ -3,11 +3,7 @@ defmodule SpotifyExTest.PlaylistController do
   plug :check_tokens
 
   def index(conn, _params) do
-    case Spotify.Playlist.current_user_playlists(conn) do
-      { 200, playlists } ->
-        render conn, "index.html", playlists: playlists
-        :authorize -> redirect conn, external: Spotify.Authorization.url
-    end
+    render conn, "index.html"
   end
 
   defp check_tokens(conn, _params) do
