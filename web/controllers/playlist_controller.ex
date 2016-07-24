@@ -3,13 +3,15 @@ defmodule SpotifyExTest.PlaylistController do
   plug :check_tokens
 
   def index(conn, _params) do
+    {:ok, me} = Spotify.Profile.me!
     render conn, "index.html"
   end
 
   defp check_tokens(conn, _params) do
-    unless Spotify.Authentication.tokens_present?(conn) do
+    unless Spotify.Authentication.authenticated?(conn) do
       redirect conn, to: authorization_path(conn, :authorize)
+    else
+      conn
     end
-    conn
   end
 end
