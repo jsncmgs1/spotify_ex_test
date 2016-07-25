@@ -3,8 +3,10 @@ defmodule SpotifyExTest.AuthenticationController do
 
   def authenticate(conn, params) do
     { conn, path } = case Spotify.Authentication.authenticate(conn, params) do
-     { :ok, conn } -> { conn, playlist_path(conn, :index) }
-     { :error, reason, conn } -> { conn, "/error/" }
+      { :ok, conn } -> 
+        conn = put_status(conn, 301)
+        { conn, profile_path(conn, :index) }
+      { :error, reason, conn } -> { conn, "/error/" }
     end
 
     redirect conn, to: path

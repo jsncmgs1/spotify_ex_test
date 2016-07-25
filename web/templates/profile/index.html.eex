@@ -1,0 +1,20 @@
+<div class='profile'>
+  <h2> Spotify.Profile Test </h2>
+
+  <h3> My Profile </h3>
+  <ul>
+    <li><%= @profile.display_name %></li>
+    <li><%= @profile.birthdate %></li>
+    <li><%= @profile.id %></li>
+    <li><%= @profile.email %></li>
+  </ul>
+
+  <h3> Another Profile </h3>
+  <ul>
+    <li><%= @another_profile.display_name %></li>
+    <li><%= @another_profile.birthdate %></li>
+    <li><%= @another_profile.id %></li>
+    <li><%= @another_profile.email %></li>
+  </ul>
+</div>
+

@@ -16,7 +16,10 @@ defmodule SpotifyExTest.Router do
   scope "/", SpotifyExTest do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PlaylistController, :index
+    get "/", HomeController, :index
+    get "/profile", ProfileController, :index
+    get "/playlist", PlaylistController, :index
+    get "/personalization", PersonalizationController, :index
     get "/authorize", AuthorizationController, :authorize
     get "/authenticate", AuthenticationController, :authenticate
   end

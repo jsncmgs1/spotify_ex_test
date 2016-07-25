@@ -29,3 +29,8 @@ import_config "secret.exs"
 config :phoenix, :generators,
   migration: true,
   binary_id: false
+
+config :phoenix, :template_engines,
+  haml: PhoenixHaml.Engine
+
+config :hound, driver: "phantomjs"

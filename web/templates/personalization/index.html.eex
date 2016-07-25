@@ -1,0 +1,20 @@
+<div class='profile'>
+  <h2> Spotify.Personalization Test </h2>
+
+  <h3> My Top 5 Artists </h3>
+  <%# <ul> %>
+  <%#   <li><%= @top_artists.display_name %1></li> %>
+  <%#   <li><%= @top_artists.birthdate %1></li> %>
+  <%#   <li><%= @top_artists.id %1></li> %>
+  <%#   <li><%= @top_artists.email %1></li> %>
+  <%# </ul> %>
+
+  <h3> My Top 5 Tracks </h3>
+  <ul>
+    <li><%= @top_tracks.display_name %></li>
+    <li><%= @top_tracks.birthdate %></li>
+    <li><%= @top_tracks.id %></li>
+    <li><%= @top_tracks.email %></li>
+  </ul>
+</div>
+
