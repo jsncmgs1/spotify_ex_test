@@ -1,8 +1,13 @@
 <div class="jumbotron">
-  <h2>SpotifyEx Test App</h2>
+  <h3> Profile </h3>
+  <ul>
+    <li>Name: <%= @profile.display_name %></li>
+    <li>URI: <%= @profile.uri %></li>
+  </ul>
 </div>
 
 <a href="http://localhost:4000/authorize">Authorize</a>
+
 <%# <ul> %>
 <%#   <%= for playlist <- @playlists do %1> %>
 <%#     <li> %>
