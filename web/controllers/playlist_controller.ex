@@ -18,6 +18,7 @@ defmodule SpotifyExTest.PlaylistController do
     :ok = Spotify.Playlist.follow_playlist(conn, "spotify", "103Zi2NG06F9qimASDrszv")
 
     #DELETE
+    :ok = Spotify.Playlist.unfollow_playlist(conn, "spotify", "103Zi2NG06F9qimASDrszv")
 
     render conn, "index.html", playlists: playlists, playlist: playlist
   end
