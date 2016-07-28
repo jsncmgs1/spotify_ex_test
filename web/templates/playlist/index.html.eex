@@ -1,19 +1,21 @@
 <div class="jumbotron">
-  <h3> Profile </h3>
+  <h3> Playlists </h3>
   <ul>
-    <li>Name: <%= @profile.display_name %></li>
-    <li>URI: <%= @profile.uri %></li>
   </ul>
 </div>
 
 <a href="http://localhost:4000/authorize">Authorize</a>
 
-<%# <ul> %>
-<%#   <%= for playlist <- @playlists do %1> %>
-<%#     <li> %>
-<%#       <iframe src=https://embed.spotify.com/?uri=<%= playlist["uri"] %1> width="600" height="760" frameborder="0" allowtransparency="true"></iframe> %>
+<h4> Feature Playlists </h4>
+<ul>
+  <%= for playlist <- @playlists do %>
+    <li>
+      <%= playlist.name %>
+    </li>
+  <% end %>
+</ul>
 
-<%#       <%= playlist["uri"] %1> %>
-<%#     </li> %>
-<%#   <% end %1> %>
-<%# </ul> %>
+
+<h4>Get Playlist</h4>
+<p><%= @playlist.name %></p>
+
