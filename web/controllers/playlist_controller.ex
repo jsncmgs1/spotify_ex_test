@@ -5,13 +5,14 @@ defmodule SpotifyExTest.PlaylistController do
 
   def index(conn, _params) do
     #GET collection
-    {:ok, playlists} = Spotify.Playlist.featured(conn)
+    {:ok, %{ items: playlists }} = Spotify.Playlist.featured(conn)
 
     #GET playlist
     {:ok, playlist} = Spotify.Playlist.get_playlist(conn, "12182580077", "6xQiPOErdJLS3JEUHEC8Y0")
 
     #POST
     body = Poison.encode! %{name: "foo", public: true}
+
     {:ok, playlist} = Spotify.Playlist.create_playlist(conn, "12182580077", body)
 
     #PUT
