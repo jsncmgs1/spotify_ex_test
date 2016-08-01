@@ -1,7 +1,6 @@
 defmodule SpotifyExTest.PlaylistController do
   use SpotifyExTest.Web, :controller
   plug SpotifyExTest.Plugs.Auth
-  @user_id
 
   def index(conn, _params) do
     #GET collection

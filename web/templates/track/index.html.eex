@@ -1,0 +1,20 @@
+<h1> Track API </h1>
+
+<div>
+  Track: <%= @track.name %>
+  Tracks:
+  <ul>
+    <%= for track <- @tracks do %>
+      <li><%= track.name %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  Audio Feature: <%= @audio_feature.energy %>
+  <ul> Audio Features:
+    <%= for af <- @audio_features do %>
+      Energy: <li><%= af.energy %></li>
+    <% end %>
+  </ul>
+</div>

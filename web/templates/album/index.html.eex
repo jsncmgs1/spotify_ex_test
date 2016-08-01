@@ -1,0 +1,16 @@
+<h1> Album API </h1>
+
+<strong>Album:</strong><%= @album.name %>
+Tracks:
+<ul>
+  <%= for track <- @tracks do %>
+    <li> <%= track.name %> </li>
+  <% end %>
+</ul>
+
+<strong>Albums:</strong>
+<ul>
+  <%= for album <- @albums do %>
+    <li> <%= album.name %> </li>
+  <% end %>
+</ul>

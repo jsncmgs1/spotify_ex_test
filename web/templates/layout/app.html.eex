@@ -20,6 +20,8 @@
       <a href="<%= profile_path @conn, :index %>"<li> Profile </li></a>
       <a href="<%= playlist_path @conn, :index %>"<li> Playlist </li></a>
       <a href="<%= personalization_path @conn, :index %>"<li> Personalization </li></a>
+      <a href="<%= track_path @conn, :index %>"<li> Track </li></a>
+      <a href="<%= album_path @conn, :index %>"<li> Album </li></a>
 
       <%= render @view_module, @view_template, assigns %>
 

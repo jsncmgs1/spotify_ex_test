@@ -22,6 +22,8 @@ defmodule SpotifyExTest.Router do
     get "/personalization", PersonalizationController, :index
     get "/authorize", AuthorizationController, :authorize
     get "/authenticate", AuthenticationController, :authenticate
+    get "/track", TrackController, :index
+    get "/album", AlbumController, :index
   end
 
   # Other scopes may use custom stacks.
