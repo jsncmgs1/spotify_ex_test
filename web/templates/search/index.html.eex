@@ -1,0 +1,19 @@
+<h1> Search </h1>
+
+<%= form_tag "/search" do %>
+  <label>Type</label>
+  <input name="type"></input>
+
+  <label>Query</label>
+  <input name="q"></input>
+  <button type="submit">Submit</button>
+<% end %>
+
+<%= if Enum.any?(@items) do %>
+  <ul>
+    <%= for item <- @items do %>
+      <li><%= item.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+

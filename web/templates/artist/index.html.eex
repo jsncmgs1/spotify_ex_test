@@ -1,0 +1,16 @@
+<h1> Artist API </h1>
+
+<strong>Artist:</strong><%= @artist.name %>
+Top Tracks:
+<ul>
+  <%= for track <- @top_tracks do %>
+    <li> <%= track.name %> </li>
+  <% end %>
+</ul>
+
+<strong>Top Tracks:</strong>
+<ul>
+  <%= for artist <- @artists do %>
+    <li> <%= artist.name %> </li>
+  <% end %>
+</ul>

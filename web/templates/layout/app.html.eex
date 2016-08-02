@@ -22,6 +22,8 @@
       <a href="<%= personalization_path @conn, :index %>"<li> Personalization </li></a>
       <a href="<%= track_path @conn, :index %>"<li> Track </li></a>
       <a href="<%= album_path @conn, :index %>"<li> Album </li></a>
+      <a href="<%= artist_path @conn, :index %>"<li> Artist </li></a>
+      <a href="<%= search_path @conn, :index %>"<li> Search </li></a>
 
       <%= render @view_module, @view_template, assigns %>
 
