@@ -24,6 +24,7 @@
       <a href="<%= album_path @conn, :index %>"<li> Album </li></a>
       <a href="<%= artist_path @conn, :index %>"<li> Artist </li></a>
       <a href="<%= search_path @conn, :index %>"<li> Search </li></a>
+      <a href="<%= category_path @conn, :index %>"<li>Category</li></a>
 
       <%= render @view_module, @view_template, assigns %>
 

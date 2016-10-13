@@ -20,7 +20,12 @@ defmodule SpotifyExTest.PlaylistController do
     #DELETE
     :ok = Spotify.Playlist.unfollow_playlist(conn, "spotify", "103Zi2NG06F9qimASDrszv")
 
-    render conn, "index.html", playlists: playlists, playlist: playlist
+    body =  Poison.encode!(%{ uris: [ "spotify:track:755MBpLqJqCO87PkoyBBQC", "spotify:track:1hsWu8gT2We6OzjhYGAged" ]})
+
+    {:ok, %{snapshot_id: snapshot}} = Spotify.Playlist.add_tracks(conn, "12182580077","4c6fqGoRuswz2AGErxwDgi", body, [])
+
+
+    render conn, "index.html", playlists: playlists, playlist: playlist, snapshot: snapshot
   end
 
 end

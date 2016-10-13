@@ -19,3 +19,7 @@
 <h4>Get Playlist</h4>
 <p><%= @playlist.name %></p>
 
+<h4> Added Tracks snapshot </h4>
+<p> <%= @snapshot %> </p>
+
+

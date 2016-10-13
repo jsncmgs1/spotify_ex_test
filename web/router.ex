@@ -27,6 +27,7 @@ defmodule SpotifyExTest.Router do
     get "/artst", ArtistController, :index
     get "/search", SearchController, :index
     post "/search", SearchController, :search
+    get "/category", CategoryController, :index
   end
 
   # Other scopes may use custom stacks.
