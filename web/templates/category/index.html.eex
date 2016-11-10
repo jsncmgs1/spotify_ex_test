@@ -1,0 +1,7 @@
+<h1> Category </h1>
+
+<ul>
+  <%= for category <- @categories do %>
+    <li><%= category.name %></li>
+  <% end %>
+</ul>
