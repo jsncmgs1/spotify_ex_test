@@ -33,4 +33,3 @@ config :phoenix, :generators,
 config :phoenix, :template_engines,
   haml: PhoenixHaml.Engine
 
-config :hound, driver: "phantomjs"

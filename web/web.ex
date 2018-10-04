@@ -16,22 +16,9 @@ defmodule SpotifyExTest.Web do
   below.
   """
 
-  def model do
-    quote do
-      use Ecto.Model
-
-      import Ecto.Changeset
-      import Ecto.Query, only: [from: 1, from: 2]
-    end
-  end
-
   def controller do
     quote do
       use Phoenix.Controller
-
-      alias SpotifyExTest.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 1, from: 2]
 
       import SpotifyExTest.Router.Helpers
     end
@@ -61,9 +48,6 @@ defmodule SpotifyExTest.Web do
     quote do
       use Phoenix.Channel
 
-      alias SpotifyExTest.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 1, from: 2]
     end
   end
 
