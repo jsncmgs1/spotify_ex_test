@@ -20,21 +20,8 @@ defmodule SpotifyExTest.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
-      alias SpotifyExTest.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
-
-
       # The default endpoint for testing
       @endpoint SpotifyExTest.Endpoint
     end
-  end
-
-  setup tags do
-    unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(SpotifyExTest.Repo, [])
-    end
-
-    :ok
   end
 end

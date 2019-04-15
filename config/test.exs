@@ -9,11 +9,5 @@ config :spotify_ex_test, SpotifyExTest.Endpoint,
 # Print only warnings and errors during test
 config :logger, level: :warn
 
-# Configure your database
-config :spotify_ex_test, SpotifyExTest.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "spotify_ex_test_test",
-  hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox
+config :hound, driver: "phantomjs"
+

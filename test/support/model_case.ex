@@ -16,19 +16,7 @@ defmodule SpotifyExTest.ModelCase do
 
   using do
     quote do
-      alias SpotifyExTest.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
-      import SpotifyExTest.ModelCase
     end
-  end
-
-  setup tags do
-    unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(SpotifyExTest.Repo, [])
-    end
-
-    :ok
   end
 
   @doc """

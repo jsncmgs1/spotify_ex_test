@@ -9,8 +9,7 @@ defmodule SpotifyExTest.Mixfile do
      compilers: [:phoenix] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     aliases: aliases,
-     deps: deps]
+     deps: deps()]
   end
 
   # Configuration for the OTP application.
@@ -19,7 +18,7 @@ defmodule SpotifyExTest.Mixfile do
   def application do
     [mod: {SpotifyExTest, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex, :spotify_ex, :poison]]
+                    :spotify_ex, :poison]]
   end
 
   # Specifies which paths to compile per environment.
@@ -30,9 +29,7 @@ defmodule SpotifyExTest.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.2.0"},
-     {:phoenix_ecto, "~> 1.1"},
-     {:postgrex, ">= 0.0.0"},
+    [{:phoenix, "~> 1.3.0"},
      {:phoenix_html, "~> 2.1"},
      {:phoenix_haml, "~> 0.2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
@@ -40,16 +37,5 @@ defmodule SpotifyExTest.Mixfile do
      {:spotify_ex, path: "~/code/spotify_ex"},
      {:hound, "~> 1.0", only: :test},
      {:cowboy, "~> 1.0"}]
-  end
-
-  # Aliases are shortcut or tasks specific to the current project.
-  # For example, to create, migrate and run the seeds file at once:
-  #
-  #     $ mix ecto.setup
-  #
-  # See the documentation for `Mix` for more info on aliases.
-  defp aliases do
-    ["ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-     "ecto.reset": ["ecto.drop", "ecto.setup"]]
   end
 end
