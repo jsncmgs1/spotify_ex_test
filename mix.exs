@@ -4,7 +4,7 @@ defmodule SpotifyExTest.Mixfile do
   def project do
     [app: :spotify_ex_test,
      version: "0.0.1",
-     elixir: "~> 1.3",
+     elixir: "~> 1.10.3",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
@@ -29,13 +29,15 @@ defmodule SpotifyExTest.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.3.0"},
-     {:phoenix_html, "~> 2.1"},
-     {:phoenix_haml, "~> 0.2.1"},
-     {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:poison, ">= 1.5.0"},
-     {:spotify_ex, path: "~/code/spotify_ex"},
-     {:hound, "~> 1.0", only: :test},
-     {:cowboy, "~> 1.0"}]
+    [
+      {:hound, "~> 1.0", only: :test},
+      {:phoenix, "~> 1.5.0"},
+      {:phoenix_haml, "~> 0.2.1"},
+      {:phoenix_html, "~> 2.14"},
+      {:phoenix_live_reload, "~> 1.0", only: :dev},
+      {:plug_cowboy, "~> 2.1"},
+      {:poison, ">= 1.5.0"},
+      {:spotify_ex, "~> 2.0"}
+    ]
   end
 end

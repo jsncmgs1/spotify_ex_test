@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+# Exit if any subcommand fails
+set -e
+
+cp .sample.env .env
+
+if [ -z "$CI" ]; then
+  echo "Removing previous build artifacts"
+  rm -rf node_modules
+  rm -rf deps _build
+  # asdf install
+fi
+
+mix local.hex --force
+mix local.rebar --force
+mix deps.get
+mix compile
+
+npm install --progress=false --prefix assets
+
+if [ -z "$CI" ]; then
+  npm run-script deploy --prefix assets
+fi
+
+mix ecto.reset
+MIX_ENV="test" mix ecto.reset
+
+if [ -z "$CI" ]; then
+  mix do development_seeds
+else
+  if [ "$CIRCLE_BRANCH" = "main" ]; then
+    mix do development_seeds
+  fi
+fi
+
+if [ -z "$CI" ]; then
+  if ! git config remote.staging.url > /dev/null; then
+    git remote add staging https://git.heroku.com/pickup-staging.git > /dev/null
+  fi
+
+  if ! git config remote.production.url > /dev/null; then
+    git remote add production https://git.heroku.com/pickup-production.git > /dev/null
+  fi
+fi
